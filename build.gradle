@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'com.javatutoriales'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation group: 'org.bouncycastle', name: 'bcprov-jdk18on', version: '1.72'
+    implementation group: 'org.bouncycastle', name: 'bcpkix-jdk18on', version: '1.72'
+
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(18)
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
